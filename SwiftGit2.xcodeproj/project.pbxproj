@@ -712,16 +712,16 @@
 		};
 		BEB31F931A0E567000F525B9 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = script/update_libgit2;
+			shellScript = "arch -x86_64 script/update_libgit2\n";
 		};
 		C9CE0DD61E0710C20053205D /* Lint Sources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1013,12 +1013,14 @@
 				LIBRARY_SEARCH_PATHS = (
 					External,
 					"$(inherited)",
+					/usr/local/Homebrew/lib,
+					/usr/local/Homebrew/opt/openssl/lib,
 				);
 				OTHER_LDFLAGS = (
 					"-lgit2",
 					"-force_load",
 					External/libgit2.a,
-					/usr/local/lib/libssh2.a,
+					/usr/local/Homebrew/lib/libssh2.a,
 					"-lcrypto",
 					"-lssl",
 					"-lcurl",
@@ -1041,12 +1043,14 @@
 				LIBRARY_SEARCH_PATHS = (
 					External,
 					"$(inherited)",
+					/usr/local/Homebrew/lib,
+					/usr/local/Homebrew/opt/openssl/lib,
 				);
 				OTHER_LDFLAGS = (
 					"-lgit2",
 					"-force_load",
 					External/libgit2.a,
-					/usr/local/lib/libssh2.a,
+					/usr/local/Homebrew/lib/libssh2.a,
 					"-lcrypto",
 					"-lssl",
 					"-lcurl",
